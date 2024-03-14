@@ -15,7 +15,7 @@ Calcul n 5 : 2 10 4 + - donne -12
 
 def lecture_fichier(nom_fichier):
     """Lit un fichier et renvoie une liste de ses lignes."""
-    with open(nom_fichier, 'r') as file:
+    with open(nom_fichier, encoding="utf-8", mode="r") as file:
         liste_expression = []
         for line in file:
             liste_expression.append(line)

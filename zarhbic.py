@@ -24,21 +24,21 @@ def lecture_fichier(nom_fichier):
 
 def evaluer_zarhbic(expression):
     """Évalue une expression Zarhbic et renvoie le résultat."""
-    pile = []
+    pile_evaluation = []
     symboles = expression.split()
 
     for symbole in symboles:
         if est_operande(symbole):
-            pile.append(int(symbole))
+            pile_evaluation.append(int(symbole))
         elif est_operateur(symbole):
-            evaluer_operation(symbole, pile)
+            evaluer_operation(symbole, pile_evaluation)
         else:
             raise ValueError("Erreur : symbole non reconnu dans l'expression.")
 
-    if len(pile) != 1:
+    if len(pile_evaluation) != 1:
         raise ValueError("Erreur : l'expression n'est pas valide.")
 
-    return pile[0]
+    return pile_evaluation[0]
 
 def est_operande(symbole):
     """Vérifie si un symbole est un opérande (un nombre)."""
@@ -49,22 +49,22 @@ def est_operateur(symbole):
     operateurs = ['+', '-', '*', '/']
     return symbole in operateurs 
 
-def evaluer_operation(operateur, pile):
+def evaluer_operation(operateur, pile_operation):
     """Évalue une opération et met à jour la pile avec le résultat."""
-    if len(pile) < 2:
+    if len(pile_operation) < 2:
         raise ValueError(f"Erreur : pas assez d'opérandes pour l'opérateur {operateur}.")
 
-    operand2 = pile.pop()
-    operand1 = pile.pop()
+    operand2 = pile_operation.pop()
+    operand1 = pile_operation.pop()
 
     if operateur == '+':
-        pile.append(operand1 + operand2)
+        pile_operation.append(operand1 + operand2)
     elif operateur == '-':
-        pile.append(operand1 - operand2)
+        pile_operation.append(operand1 - operand2)
     elif operateur == '*':
-        pile.append(operand1 * operand2)
+        pile_operation.append(operand1 * operand2)
     elif operateur == '/':
-        pile.append(operand1 / operand2)
+        pile_operation.append(operand1 / operand2)
 
 def affichage_calcul(expression):
     """Affiche une expression Zarhbic."""

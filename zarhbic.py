@@ -20,7 +20,6 @@ def lecture_fichier(nom_fichier):
         for line in file:
             liste_expression.append(line)
     return liste_expression
-        
 
 def evaluer_zarhbic(expression):
     """Évalue une expression Zarhbic et renvoie le résultat."""
@@ -47,7 +46,7 @@ def est_operande(symbole):
 def est_operateur(symbole):
     """Vérifie si un symbole est un opérateur (+, -, *, /)."""
     operateurs = ['+', '-', '*', '/']
-    return symbole in operateurs 
+    return symbole in operateurs
 
 def evaluer_operation(operateur, pile_operation):
     """Évalue une opération et met à jour la pile avec le résultat."""
@@ -75,12 +74,12 @@ def affichage_resultat(resultat):
     print(f"L'expression Zarhbic vaut {resultat}")
 
 # Exemple d'utilisation
-        
+
 if __name__ == '__main__':
     expressions = lecture_fichier('./import_zarhbic.txt')
 
     for expression in expressions:
         resultat = evaluer_zarhbic(expression)
-        
+
         affichage_calcul(expression)
         affichage_resultat(resultat)

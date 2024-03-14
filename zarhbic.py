@@ -21,10 +21,10 @@ def lecture_fichier(nom_fichier):
             liste_expression.append(line)
     return liste_expression
 
-def evaluer_zarhbic(expression):
+def evaluer_zarhbic(formule):
     """Évalue une expression Zarhbic et renvoie le résultat."""
     pile_evaluation = []
-    symboles = expression.split()
+    symboles = formule.split()
 
     for symbole in symboles:
         if est_operande(symbole):
@@ -65,13 +65,13 @@ def evaluer_operation(operateur, pile_operation):
     elif operateur == '/':
         pile_operation.append(operand1 / operand2)
 
-def affichage_calcul(expression):
+def affichage_calcul(formule):
     """Affiche une expression Zarhbic."""
-    print(f"L'expression Zarhbic est {expression}")
+    print(f"L'expression Zarhbic est {formule}")
 
-def affichage_resultat(resultat):
+def affichage_resultat(resultat_expression):
     """Affiche le résultat d'une expression Zarhbic."""
-    print(f"L'expression Zarhbic vaut {resultat}")
+    print(f"L'expression Zarhbic vaut {resultat_expression}")
 
 # Exemple d'utilisation
 

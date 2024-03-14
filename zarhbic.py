@@ -37,7 +37,7 @@ def est_operateur(symbole):
 def evaluer_operation(operateur, pile):
     """Évalue une opération et met à jour la pile avec le résultat."""
     if len(pile) < 2:
-        raise ValueError("Erreur : pas assez d'opérandes pour l'opérateur {}.".format(operateur))
+        raise ValueError(f"Erreur : pas assez d'opérandes pour l'opérateur {operateur}.")
 
     operand2 = pile.pop()
     operand1 = pile.pop()

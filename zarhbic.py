@@ -62,11 +62,10 @@ def affichage_resultat(resultat):
 # Exemple d'utilisation
         
 if __name__ == '__main__':
-    import_fichier = './import_zarhbic.txt'
-    expressions = lecture_fichier(import_fichier)
+    expressions = lecture_fichier('./import_zarhbic.txt')
 
     for expression in expressions:
         resultat = evaluer_zarhbic(expression)
         
-        affichage_calcul(expression=expression)
-        affichage_resultat(resultat=resultat)
+        affichage_calcul(expression)
+        affichage_resultat(resultat)
